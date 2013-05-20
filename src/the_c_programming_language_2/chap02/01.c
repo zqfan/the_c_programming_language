@@ -7,11 +7,15 @@
 #include<stdio.h>
 #include<limits.h>
 #include<float.h>
+#include<math.h>
 
 /* /usr/include/limits.h */
 /* /usr/lib/gcc/i686-linux-gnu/4.6/include/float.h */
 int main() {
   /* range of char */
+  printf("compute singed char min: %d, max: %d\n",
+         -(int)pow(2, sizeof(char)*7),
+         (int)pow(2, sizeof(char)*7) - 1);
   printf("signed char min: %d, max: %d\n", SCHAR_MIN, SCHAR_MAX);
   printf("unsigned char min: %d, max: %d\n", 0, UCHAR_MAX);
 
