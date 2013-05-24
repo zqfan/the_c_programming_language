@@ -24,16 +24,14 @@ int main() {
 
   is_continuous = 0;
   while ((len = get_line(line, MAXLINE)) > 0) {
-    if (is_continuous)
-      printf("%s", line);
     /* it is a very long line */
     if ((MAXLINE == len + 1) && (line[MAXLINE-2] != '\n')) {
-      /* it is not printed before, then should be printed here */
-      if (!is_continuous)
-        printf("%s", line);
+      printf("%s", line);
       is_continuous = 1;
-    } else
+    } else if (is_continuous) {
+      printf("%s", line);
       is_continuous = 0;
+    }
   }
   return 0;
 }
